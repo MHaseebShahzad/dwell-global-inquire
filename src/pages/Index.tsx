@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from "react";
+import InquiryForm from "@/components/InquiryForm";
+import { Phone } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Header */}
+      <header className="py-6 bg-luxury-navy text-white text-center">
+        <h1 className="text-3xl md:text-4xl font-bold font-playfair tracking-wide">Dwell Global Property</h1>
+      </header>
+
+      {/* Main Content - Split Layout */}
+      <main className="flex-grow flex flex-col md:flex-row">
+        {/* Left Side - Image */}
+        <div className="w-full md:w-1/2 bg-black">
+          <img 
+            src="/lovable-uploads/0ae56ce4-c672-4a62-8617-6c78eac3fd3a.png" 
+            alt="Luxury Property Investment Opportunity"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Right Side - Form */}
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-6 md:p-12 flex items-center justify-center">
+          <InquiryForm />
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-luxury-navy py-4 text-white text-center">
+        <div className="flex items-center justify-center space-x-2">
+          <Phone size={18} />
+          <span className="text-lg">+44 (0) 123 456 7890</span>
+        </div>
+      </footer>
     </div>
   );
 };
