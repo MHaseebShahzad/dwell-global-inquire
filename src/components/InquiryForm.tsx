@@ -41,8 +41,8 @@ const InquiryForm = () => {
       <h2 className="text-2xl font-bold text-luxury-navy mb-2 font-playfair">Investment Inquiry</h2>
       <p className="text-luxury-gray mb-6">Fill out the form below and our advisors will contact you shortly.</p>
       
-      <form onSubmit={handleSubmit}>
-        <div className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <input 
               type="text" 
@@ -66,7 +66,9 @@ const InquiryForm = () => {
               required
             />
           </div>
-          
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <input 
               type="tel" 
@@ -94,26 +96,26 @@ const InquiryForm = () => {
               <option value="£2,000,000+">£2,000,000+</option>
             </select>
           </div>
-          
-          <div>
-            <textarea 
-              name="message" 
-              placeholder="Your Message or Investment Interest" 
-              className="form-input min-h-[120px]" 
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-            />
-          </div>
-          
-          <button 
-            type="submit" 
-            className="gold-button" 
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "GET MORE INFO NOW"}
-          </button>
         </div>
+        
+        <div>
+          <textarea 
+            name="message" 
+            placeholder="Your Message or Investment Interest" 
+            className="form-input min-h-[120px]" 
+            value={formData.message}
+            onChange={handleChange}
+            rows={5}
+          />
+        </div>
+        
+        <button 
+          type="submit" 
+          className="gold-button transition-transform hover:scale-[1.02] active:scale-[0.98]" 
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "GET MORE INFO NOW"}
+        </button>
       </form>
     </div>
   );
