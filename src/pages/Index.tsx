@@ -8,23 +8,14 @@ const Index = () => {
     <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
       <header className="py-4 bg-luxury-navy text-white">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/ad8b1b59-92f2-459c-a27d-ce57fbada460.png" 
-              alt="Dwell Global Property Logo" 
-              className="h-12 mr-3"
-            />
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold font-playfair tracking-wide">Dwell Global Property</h1>
-              <p className="text-luxury-lightgold text-sm md:text-base font-raleway">Empowering Smart Investments Across the Globe</p>
-            </div>
-          </div>
+        <div className="container mx-auto px-4 flex flex-col justify-start items-start">
+          <h1 className="text-3xl md:text-4xl font-bold font-playfair tracking-wide">Dwell Global Property</h1>
+          <p className="text-luxury-lightgold mt-1 font-raleway">Empowering Smart Investments Across the Globe</p>
         </div>
       </header>
 
       {/* Main Content - Split Layout */}
-      <main className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-180px)]">
+      <main className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-260px)]">
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2 bg-black">
           <img 
@@ -35,9 +26,9 @@ const Index = () => {
         </div>
         
         {/* Right Side - Form */}
-        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-6 md:p-12 flex flex-col items-center justify-start">
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-8 md:p-16 flex flex-col items-center justify-center">
           {/* Achievements & Trust Section */}
-          <div className="w-full mb-6 animate-fade-in">
+          <div className="w-full mb-8 animate-fade-in">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-sm">
                 <p className="text-luxury-navy font-bold text-xl md:text-2xl">10+</p>
@@ -58,58 +49,52 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Why Invest With Us - Right Column */}
-          <div className="w-full mb-6 animate-fade-in">
-            <h2 className="text-xl md:text-2xl font-bold text-luxury-navy mb-4 font-playfair">Why Invest With Us?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex items-start bg-white bg-opacity-70 p-3 rounded-lg shadow-sm">
-                <div className="bg-luxury-navy rounded-full p-2 mr-3 text-luxury-gold flex-shrink-0">
-                  <TrendingUp size={20} />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold mb-1 text-luxury-navy">High Returns</h3>
-                  <p className="text-luxury-gray text-sm">Curated investment portfolios for steady growth.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start bg-white bg-opacity-70 p-3 rounded-lg shadow-sm">
-                <div className="bg-luxury-navy rounded-full p-2 mr-3 text-luxury-gold flex-shrink-0">
-                  <Shield size={20} />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold mb-1 text-luxury-navy">Secure Investments</h3>
-                  <p className="text-luxury-gray text-sm">Legally vetted and verified properties.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start bg-white bg-opacity-70 p-3 rounded-lg shadow-sm">
-                <div className="bg-luxury-navy rounded-full p-2 mr-3 text-luxury-gold flex-shrink-0">
-                  <UserCheck size={20} />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold mb-1 text-luxury-navy">Expert Guidance</h3>
-                  <p className="text-luxury-gray text-sm">Personalized advice from industry professionals.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start bg-white bg-opacity-70 p-3 rounded-lg shadow-sm">
-                <div className="bg-luxury-navy rounded-full p-2 mr-3 text-luxury-gold flex-shrink-0">
-                  <Globe size={20} />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold mb-1 text-luxury-navy">Global Reach</h3>
-                  <p className="text-luxury-gray text-sm">Opportunities in top cities worldwide.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
           <InquiryForm />
         </div>
       </main>
 
+      {/* Why Invest With Us Section */}
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-luxury-navy mb-8 text-center font-playfair">Why Invest With Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="flex flex-col items-center text-center p-4 hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-luxury-navy rounded-full p-4 mb-4 text-luxury-gold">
+                <TrendingUp size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-luxury-navy">High Returns</h3>
+              <p className="text-luxury-gray">Curated investment portfolios for steady growth.</p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center p-4 hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-luxury-navy rounded-full p-4 mb-4 text-luxury-gold">
+                <Shield size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-luxury-navy">Secure Investments</h3>
+              <p className="text-luxury-gray">Legally vetted and verified properties.</p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center p-4 hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-luxury-navy rounded-full p-4 mb-4 text-luxury-gold">
+                <UserCheck size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-luxury-navy">Expert Guidance</h3>
+              <p className="text-luxury-gray">Personalized advice from industry professionals.</p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center p-4 hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-luxury-navy rounded-full p-4 mb-4 text-luxury-gold">
+                <Globe size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-luxury-navy">Global Reach</h3>
+              <p className="text-luxury-gray">Opportunities in top cities worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-luxury-navy py-5 text-white">
+      <footer className="bg-luxury-navy py-6 text-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center">
             <div className="flex items-center space-x-2">
@@ -117,7 +102,7 @@ const Index = () => {
               <span className="text-sm md:text-base">+447885466009</span>
             </div>
           </div>
-          <div className="mt-3 text-center text-xs text-luxury-lightgold">
+          <div className="mt-4 text-center text-xs text-luxury-lightgold">
             © {new Date().getFullYear()} Dwell Global Property. All rights reserved.
           </div>
         </div>
