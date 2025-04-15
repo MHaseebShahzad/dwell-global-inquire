@@ -37,12 +37,12 @@ const InquiryForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg animate-fade-in">
+    <div className="w-full max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg animate-fade-in">
       <h2 className="text-2xl font-bold text-luxury-navy mb-2 font-playfair">Investment Inquiry</h2>
       <p className="text-luxury-gray mb-6">Fill out the form below and our advisors will contact you shortly.</p>
       
       <form onSubmit={handleSubmit}>
-        <div className="space-y-4">
+        <div className="space-y-5">
           <div>
             <input 
               type="text" 
@@ -99,10 +99,10 @@ const InquiryForm = () => {
             <textarea 
               name="message" 
               placeholder="Your Message or Investment Interest" 
-              className="form-input min-h-[100px]" 
+              className="form-input min-h-[120px]" 
               value={formData.message}
               onChange={handleChange}
-              rows={4}
+              rows={5}
             />
           </div>
           

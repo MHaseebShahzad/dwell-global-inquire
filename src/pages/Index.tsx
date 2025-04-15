@@ -7,12 +7,12 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
-      <header className="py-6 bg-luxury-navy text-white text-center">
-        <h1 className="text-3xl md:text-4xl font-bold font-playfair tracking-wide">Dwell Global Property</h1>
+      <header className="py-4 bg-luxury-navy text-white text-center">
+        <h1 className="text-3xl md:text-4xl font-bold font-playfair tracking-wide px-4">Dwell Global Property</h1>
       </header>
 
       {/* Main Content - Split Layout */}
-      <main className="flex-grow flex flex-col md:flex-row">
+      <main className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-200px)]">
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2 bg-black">
           <img 
@@ -23,7 +23,7 @@ const Index = () => {
         </div>
         
         {/* Right Side - Form */}
-        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-6 md:p-12 flex items-center justify-center">
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-8 md:p-16 flex items-center justify-center">
           <InquiryForm />
         </div>
       </main>
