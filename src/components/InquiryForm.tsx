@@ -37,30 +37,31 @@ const InquiryForm = () => {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg animate-fade-in">
-      <h2 className="text-2xl font-bold text-luxury-navy mb-2 font-playfair">Investment Inquiry</h2>
-      <p className="text-luxury-gray mb-6">Fill out the form below and our advisors will contact you shortly.</p>
+    <div className="items-center justify-center flex flex-col w-full">
+    <div className="w-full max-w-3xl h-full  mx-auto bg-white p-8 rounded-lg shadow-lg animate-fade-in border border-luxury-lightgold">
+      <h2 className="text-2xl font-bold text-luxury-navy mb-2 font-playfair text-center">Exclusive Investment Opportunity</h2>
+      <p className="text-luxury-gray mb-6 text-center">Connect with our expert advisors to explore premium global properties</p>
       
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div>
+          <div className="relative">
             <input 
               type="text" 
               name="name" 
               placeholder="Full Name" 
-              className="form-input" 
+              className="form-input w-full p-3 border border-luxury-lightgold rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-transparent transition-all" 
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
           
-          <div>
+          <div className="relative">
             <input 
               type="email" 
               name="email" 
               placeholder="Email Address" 
-              className="form-input" 
+              className="form-input w-full p-3 border border-luxury-lightgold rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-transparent transition-all" 
               value={formData.email}
               onChange={handleChange}
               required
@@ -69,22 +70,22 @@ const InquiryForm = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div>
+          <div className="relative">
             <input 
               type="tel" 
               name="phone" 
               placeholder="Phone Number" 
-              className="form-input" 
+              className="form-input w-full p-3 border border-luxury-lightgold rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-transparent transition-all" 
               value={formData.phone}
               onChange={handleChange}
               required
             />
           </div>
           
-          <div>
+          <div className="relative">
             <select 
               name="budget" 
-              className="form-input" 
+              className="form-input w-full p-3 border border-luxury-lightgold rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-transparent transition-all appearance-none bg-white" 
               value={formData.budget}
               onChange={handleChange}
               required
@@ -95,14 +96,17 @@ const InquiryForm = () => {
               <option value="£1,000,000 - £2,000,000">£1,000,000 - £2,000,000</option>
               <option value="£2,000,000+">£2,000,000+</option>
             </select>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <svg className="w-5 h-5 text-luxury-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
           </div>
         </div>
         
-        <div>
+        <div className="relative">
           <textarea 
             name="message" 
-            placeholder="Your Message or Investment Interest" 
-            className="form-input min-h-[120px]" 
+            placeholder="Tell us about your investment goals and preferences..." 
+            className="form-input w-full p-3 border border-luxury-lightgold rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-transparent transition-all min-h-[120px]" 
             value={formData.message}
             onChange={handleChange}
             rows={5}
@@ -111,12 +115,28 @@ const InquiryForm = () => {
         
         <button 
           type="submit" 
-          className="gold-button transition-transform hover:scale-[1.02] active:scale-[0.98]" 
+          className="w-full bg-luxury-navy text-white font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] border-2 border-luxury-gold"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "GET MORE INFO NOW"}
+          {isSubmitting ? (
+            <span className="flex items-center justify-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Processing...
+            </span>
+          ) : (
+            <span className="flex items-center justify-center">
+              SECURE YOUR CONSULTATION
+              <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
+          )}
         </button>
+        
+        <p className="text-xs text-center text-luxury-gray mt-4">Your information is secure and will never be shared with third parties</p>
       </form>
+    </div>
     </div>
   );
 };

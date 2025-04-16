@@ -9,7 +9,7 @@ const Index = () => {
       {/* Header */}
       <header className="py-4 bg-luxury-navy text-white">
         <div className="container mx-auto px-4 flex flex-col justify-start items-start">
-          <h1 className="text-3xl md:text-4xl font-bold font-playfair tracking-wide">Dwell Global Property</h1>
+          <h1 className="text-3xl md:text-4xl font-bold font-raleway tracking-wide">Dwell Global Property</h1>
           <p className="text-luxury-lightgold mt-1 font-raleway">Empowering Smart Investments Across the Globe</p>
         </div>
       </header>
@@ -26,9 +26,9 @@ const Index = () => {
         </div>
         
         {/* Right Side - Form */}
-        <div className="w-full md:w-1/2 bg-gradient-to-br from-white to-luxury-lightgold p-8 md:p-16 flex flex-col items-center justify-center">
+        <div className="w-full md:w-1/2 bg-black bg-opacity-95 md:bg-gradient-to-br md:from-white md:to-luxury-lightgold p-8 md:p-16 flex flex-col items-center justify-center">
           {/* Achievements & Trust Section */}
-          <div className="w-full mb-8 animate-fade-in">
+          {/* <div className="w-full mb-8 animate-fade-in">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-sm">
                 <p className="text-luxury-navy font-bold text-xl md:text-2xl">10+</p>
@@ -47,7 +47,7 @@ const Index = () => {
                 <p className="text-luxury-gray text-sm">Rated by Investors</p>
               </div>
             </div>
-          </div>
+          </div> */}
           
           <InquiryForm />
         </div>
@@ -94,15 +94,20 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-luxury-navy py-6 text-white">
+      <footer className=" py-6 text-luxury-navy">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center">
+            <img 
+              src="/lovable-uploads/erasebg-transformed.png" 
+              alt="Dwell Global Property Logo" 
+              className="h-20 mb-4"
+            />
             <div className="flex items-center space-x-2">
               <Phone size={16} className="text-luxury-gold" />
               <span className="text-sm md:text-base">+447885466009</span>
             </div>
           </div>
-          <div className="mt-4 text-center text-xs text-luxury-lightgold">
+          <div className="mt-4 text-center text-xs text-luxury-navy">
             © {new Date().getFullYear()} Dwell Global Property. All rights reserved.
           </div>
         </div>
